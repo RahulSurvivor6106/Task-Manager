@@ -1,7 +1,7 @@
 import { getCurrentUserFromCookies } from "./auth";
 import { prisma } from "./prisma";
 import { buildWeeklyTrend, computeStats, toActivitySummary, toAuthUser, toNotificationSummary, toProjectSummary, toTaskSummary, toTeamSummary } from "./serializers";
-import type { DashboardData, AdminStats } from "./contracts";
+import type { DashboardData, AdminStats, AdminUserTaskStats } from "./contracts";
 
 export async function getDashboardData(): Promise<DashboardData> {
   const user = await getCurrentUserFromCookies();
@@ -64,20 +64,20 @@ export async function getDashboardData(): Promise<DashboardData> {
     if (user.role === "ADMIN") {
       const totalUsers = await prisma.user.count();
 
-      const byUserMap: Record<string, { id: string; name: string; total: number; completed: number; open: number }> = {};
+      const byUserMap: Record<string, AdminUserTaskStats> = {};
       for (const t of taskSummaries) {
         const assignee = t.assignee;
         if (!assignee) continue;
         const id = assignee.id;
-        if (!byUserMap[id]) byUserMap[id] = { id, name: assignee.name, total: 0, completed: 0, open: 0 };
-        byUserMap[id].total += 1;
-        if (t.status === "DONE") byUserMap[id].completed += 1;
-        else byUserMap[id].open += 1;
+        if (!byUserMap[id]) byUserMap[id] = { id, name: assignee.name, totalTasks: 0, completedTasks: 0, openTasks: 0 };
+        byUserMap[id].totalTasks += 1;
+        if (t.status === "DONE") byUserMap[id].completedTasks += 1;
+        else byUserMap[id].openTasks += 1;
       }
 
       const adminStats: AdminStats = {
         totalUsers,
-        users: Object.values(byUserMap).sort((a, b) => b.total - a.total),
+        users: Object.values(byUserMap).sort((a, b) => b.totalTasks - a.totalTasks),
       };
 
       // attach adminStats to base via type assertion (dashboard component will read it optionally)
