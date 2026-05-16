@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
 type DelegatePath = string[];
 
@@ -24,7 +25,8 @@ function createPrismaClient() {
   }
 
   try {
-    const adapter = new PrismaPg({ connectionString: dbUrl });
+    const pool = new Pool({ connectionString: dbUrl });
+    const adapter = new PrismaPg(pool);
     const client = new PrismaClient({ adapter, log: ["warn", "error"] });
 
     if (process.env.NODE_ENV !== "production") {
