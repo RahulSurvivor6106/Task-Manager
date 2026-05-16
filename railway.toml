@@ -4,5 +4,3 @@ builder = "nixpacks"
 [deploy]
 startCommand = "npm run db:push && npm run start"
 
-[env]
-NIXPACKS_NODE_VERSION = "22"
