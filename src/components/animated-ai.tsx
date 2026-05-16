@@ -27,7 +27,7 @@ export default function AnimatedAI({ className }: { className?: string }) {
     const DPR = Math.max(1, window.devicePixelRatio || 1);
 
     function resize() {
-      if (!container) return;
+      if (!container || !ctx) return;
       width = container.clientWidth;
       height = container.clientHeight;
       canvas.width = Math.floor(width * DPR);
@@ -53,6 +53,7 @@ export default function AnimatedAI({ className }: { className?: string }) {
     let last = performance.now();
 
     function draw(now: number) {
+      if (!ctx) return;
       const dt = Math.min(40, now - last) / 16.666;
       last = now;
 
