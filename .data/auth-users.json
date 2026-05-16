@@ -1,0 +1,119 @@
+{
+  "users": [
+    {
+      "id": "42da31a0-2c0e-4fdf-a479-1469358677e8",
+      "name": "iefhoifeh",
+      "email": "bipinkumar433418@gmail.com",
+      "passwordHash": "$2b$12$WF7jHTCDCYcbbunzi0pyxuW9m.fzYYzn5Vui4y79aEI3ZsopafhCq",
+      "role": "MEMBER",
+      "title": "jdniuhd",
+      "createdAt": "2026-05-15T13:02:16.222Z",
+      "updatedAt": "2026-05-15T13:02:16.222Z"
+    },
+    {
+      "id": "c5ddee05-565a-429d-a189-68ad4bfd4b52",
+      "name": "Local User",
+      "email": "localfallback@example.com",
+      "passwordHash": "$2b$12$6NAWfXEWPAq9YsWat.EFPO7aTjj8gRtXxw6V0.9wHH09TJowYOgvq",
+      "role": "MEMBER",
+      "createdAt": "2026-05-15T13:03:17.828Z",
+      "updatedAt": "2026-05-15T13:03:17.828Z"
+    },
+    {
+      "id": "0d3c29fb-662d-4bd9-9da9-5e972fd2633f",
+      "name": "Loop Fix",
+      "email": "loopfix_1778851047720@example.com",
+      "passwordHash": "$2b$12$zVcKdogWPt399y5r2M7b/eZ04oFVe/Nr7qtqil3Ez2myYL9R5SMmq",
+      "role": "MEMBER",
+      "createdAt": "2026-05-15T13:17:30.855Z",
+      "updatedAt": "2026-05-15T13:17:30.855Z"
+    },
+    {
+      "id": "ec72eb90-8975-46b1-a079-c1bc96005d6e",
+      "name": "Loop OK",
+      "email": "loopok_1778851183350@example.com",
+      "passwordHash": "$2b$12$xva0XX6l5yyca3wmgGF9xeTcTBmJmL2BpCmjKQIqPDttcs7FmyANu",
+      "role": "MEMBER",
+      "createdAt": "2026-05-15T13:19:46.457Z",
+      "updatedAt": "2026-05-15T13:19:46.457Z"
+    },
+    {
+      "id": "de699d0e-03a4-4aca-8388-a1fb141d5d92",
+      "name": "rahul",
+      "email": "dhaka7884@gmail.com",
+      "passwordHash": "$2b$12$r/DvCUf6HEuRCyZytIJ8sOoQ5OkyRclS/6KegC.jMNJFP9A.2fON6",
+      "role": "ADMIN",
+      "title": "ql",
+      "createdAt": "2026-05-15T13:37:34.747Z",
+      "updatedAt": "2026-05-15T13:37:34.747Z"
+    },
+    {
+      "id": "7c493619-f174-481c-9355-86372f7688c3",
+      "name": "Rahul",
+      "email": "rahul.debnath@ethara.ai",
+      "passwordHash": "$2b$12$McjzwrynfNC7dYXPiroyy.G80HO1PZb7U6Wex6sAnw04YfEqCUuGC",
+      "role": "ADMIN",
+      "title": "PL",
+      "createdAt": "2026-05-15T15:09:43.472Z",
+      "updatedAt": "2026-05-15T15:45:00.000Z"
+    },
+    {
+      "id": "9057d6ae-9508-47ea-bb79-70a125e8e5c2",
+      "name": "Rahul",
+      "email": "rahul.debnath@ethara.ai",
+      "passwordHash": "$2b$12$McjzwrynfNC7dYXPiroyy.G80HO1PZb7U6Wex6sAnw04YfEqCUuGC",
+      "role": "ADMIN",
+      "title": "PL",
+      "createdAt": "2026-05-15T15:23:50.907Z",
+      "updatedAt": "2026-05-15T15:45:00.000Z"
+    },
+    {
+      "id": "4788527a-63da-4c08-9811-21ee380a64d1",
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "passwordHash": "$2b$12$k0TzcOz.3EDEx5ibYm1/QuGR7s5.0DmCarvPIX6jJZadMrrCqaj.2",
+      "role": "MEMBER",
+      "title": "Tasker",
+      "createdAt": "2026-05-15T15:52:02.482Z",
+      "updatedAt": "2026-05-15T15:52:02.482Z"
+    },
+    {
+      "id": "b89e04ec-3538-49f9-8f17-6470e00c60f5",
+      "name": "Rahul",
+      "email": "rahul@ethara.ai",
+      "passwordHash": "$2b$12$S/B6tC1B10czpJ7e3iuseOJ.MCxzcCRmsCZlZIwuZdZOB4R/VNDOa",
+      "role": "ADMIN",
+      "title": "PL",
+      "createdAt": "2026-05-15T16:12:59.586Z",
+      "updatedAt": "2026-05-15T16:12:59.586Z"
+    },
+    {
+      "id": "d9d4a2b8-ef93-427b-ae05-98584301eb12",
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "passwordHash": "$2b$12$vfiYUaQcUX9wDfNB31NSa.HKred6cC0NOHVrCxHlZFxTckjRDBeXS",
+      "role": "MEMBER",
+      "title": "Tasker",
+      "createdAt": "2026-05-15T16:21:51.677Z",
+      "updatedAt": "2026-05-15T16:21:51.677Z"
+    },
+    {
+      "id": "944b020f-1ac5-4011-ae88-479169e67974",
+      "name": "Test User",
+      "email": "test.user+dev@example.test",
+      "passwordHash": "$2b$12$cHfvoRKJ3AU8oYPA9NqHeO.hkYFhbG41lPPKdY11Gb7k8R3Kvi3Di",
+      "role": "MEMBER",
+      "createdAt": "2026-05-15T16:36:33.023Z",
+      "updatedAt": "2026-05-15T16:36:33.023Z"
+    },
+    {
+      "id": "3e73dc9d-7553-4472-a818-c965ebbc378d",
+      "name": "Admin User",
+      "email": "admin.user+dev@example.test",
+      "passwordHash": "$2b$12$E5boEKldnHlf/rtUOIGkD.JvjIXCITNbV2307OkIzhpmloF6qNEey",
+      "role": "ADMIN",
+      "createdAt": "2026-05-15T16:38:14.074Z",
+      "updatedAt": "2026-05-15T16:38:14.074Z"
+    }
+  ]
+}
