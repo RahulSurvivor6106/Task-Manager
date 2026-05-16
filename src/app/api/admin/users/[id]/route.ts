@@ -4,12 +4,12 @@ import { removeUser } from "@/lib/admin";
 
 export const runtime = "nodejs";
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const user = await getCurrentUserFromCookies();
     if (!user || user.role !== "ADMIN") return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
 
-    const id = params.id;
+    const { id } = await params;
     if (!id) return NextResponse.json({ error: "Missing id" }, { status: 400 });
 
     await removeUser(id);
@@ -19,14 +19,14 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
   }
 }
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const user = await getCurrentUserFromCookies();
     if (!user || user.role !== "ADMIN") return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
 
     const form = await request.formData();
     const method = form.get("_method");
-    const id = params.id;
+    const { id } = await params;
     if (method === "delete") {
       await removeUser(id);
       return NextResponse.json({ ok: true });
