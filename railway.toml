@@ -1,5 +1,5 @@
-[build]
-builder = "NIXPACKS"
-
 [deploy]
 startCommand = "npm run start"
+
+[variables]
+RAILPACK_NODE_VERSION = "22"
