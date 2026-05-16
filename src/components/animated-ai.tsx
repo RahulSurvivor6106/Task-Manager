@@ -27,6 +27,7 @@ export default function AnimatedAI({ className }: { className?: string }) {
     const DPR = Math.max(1, window.devicePixelRatio || 1);
 
     function resize() {
+      if (!container) return;
       width = container.clientWidth;
       height = container.clientHeight;
       canvas.width = Math.floor(width * DPR);
