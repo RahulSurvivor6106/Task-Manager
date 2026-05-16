@@ -1,5 +1,8 @@
-[deploy]
-startCommand = "npm run start"
+[build]
+builder = "nixpacks"
 
-[variables]
-RAILPACK_NODE_VERSION = "22"
+[deploy]
+startCommand = "npm run db:push && npm run start"
+
+[env]
+NIXPACKS_NODE_VERSION = "22"
