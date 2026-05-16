@@ -60,7 +60,7 @@ function createDelegateProxy(path: DelegatePath = []): unknown {
 
       if (path.length === 0 && property.startsWith("$")) {
         return (...args: unknown[]) => {
-          const client = createPrismaClient() as Record<string, unknown>;
+          const client = createPrismaClient() as unknown as Record<string, unknown>;
           const method = client[property];
           if (typeof method !== "function") {
             throw new Error(`Prisma client method ${property} is not available`);
