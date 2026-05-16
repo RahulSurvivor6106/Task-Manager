@@ -1,99 +1,72 @@
-# Team Task Manager
+# 🚀 Team Task Manager
 
-Premium full-stack team task manager built with Next.js, TypeScript, Tailwind CSS, Prisma, and PostgreSQL.
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Prisma](https://img.shields.io/badge/Prisma-7-2D3748?style=for-the-badge&logo=prisma)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Ready-316192?style=for-the-badge&logo=postgresql)
 
-## Features
+A premium, full-stack task management platform designed to streamline team productivity. Built with modern web technologies, it features an interactive Kanban board, role-based access control, and comprehensive analytics.
 
-- Signup and login with JWT session cookies
-- Role-based access control for Admin and Member users
-- Projects, teams, and tasks with Prisma relationships
-- Kanban task board with drag-and-drop status updates
-- Overdue task detection and productivity analytics
-- Responsive dashboard with charts, notifications, activity feed, and search/filter
-- Zod and React Hook Form validation
-- Shadcn-inspired reusable UI primitives
-- Railway deployment configuration
+## ✨ Key Features
 
-## Tech Stack
+* 🔐 **Secure Authentication:** Seamless signup and login utilizing JWT session cookies.
+* 👥 **Role-Based Access Control (RBAC):** Distinct permission levels for Admin and Member users.
+* 🗂️ **Relational Data Management:** Organize work efficiently with Projects, Teams, and Tasks powered by Prisma.
+* 📋 **Interactive Kanban Board:** Drag-and-drop task status updates for an intuitive workflow.
+* 📊 **Productivity Analytics:** Automated overdue task detection and visual data reporting.
+* 🎨 **Modern UI/UX:** Responsive dashboard featuring charts, activity feeds, advanced search/filtering, and Shadcn-inspired reusable primitives.
+* 🛡️ **Robust Validation:** End-to-end type safety and form validation using Zod and React Hook Form.
 
-- Next.js 16 App Router
-- TypeScript
-- Tailwind CSS v4
-- Prisma 7
-- PostgreSQL by default, MySQL-compatible schema if you switch the datasource provider and adapter
-- Framer Motion
-- Recharts
-- dnd-kit
-- Sonner
+---
 
-## Getting Started
+## 🛠️ Tech Stack
 
-1. Install dependencies.
+**Frontend**
+* **Framework:** Next.js 16 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS v4
+* **UI Components:** Radix UI primitives (Shadcn-inspired)
+* **Interactions:** dnd-kit (Drag & Drop), Framer Motion (Animations), Sonner (Toasts)
+* **Data Visualization:** Recharts
 
-```bash
-npm install
-```
+**Backend & Database**
+* **Database:** PostgreSQL *(Default)* / MySQL-compatible
+* **ORM:** Prisma 7
+* **Authentication:** Custom JWT Implementation
+* **Validation:** Zod
 
-2. Copy `.env.example` to `.env` and set the values for your database and JWT secret.
+---
 
-3. Generate the Prisma client.
+## 🏛️ System Architecture
 
-```bash
-npm run prisma:generate
-```
+The application follows a modern monolithic architecture utilizing Next.js 16 App Router for both client-side rendering and server-side logic, communicating securely with a PostgreSQL database via Prisma ORM.
 
-4. Push the schema to your database.
-
-```bash
-npm run db:push
-```
-
-5. Seed demo data.
-
-```bash
-npm run db:seed
-```
-
-6. Start the dev server.
-
-```bash
-npm run dev
-```
-
-## Seed Accounts
-
-Use these demo accounts after seeding:
-
-- Admin: `admin@taskflow.dev` / `Password123!`
-- Member: `member@taskflow.dev` / `Password123!`
-
-## Scripts
-
-- `npm run dev` - Start the development server
-- `npm run build` - Generate Prisma client and create a production build
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint
-- `npm run prisma:generate` - Generate Prisma client
-- `npm run db:push` - Push the schema to the database
-- `npm run db:seed` - Seed demo data
-
-## Deployment
-
-The repository includes `railway.toml` for Railway deployment. Configure the following environment variables in Railway:
-
-- `DATABASE_URL`
-- `JWT_SECRET`
-- `NEXT_PUBLIC_APP_URL`
-
-## Prisma Notes
-
-- Prisma 7 uses `prisma.config.ts` for datasource URLs.
-- The runtime client uses the PostgreSQL adapter from `@prisma/adapter-pg`.
-- If you want to switch to MySQL, update `prisma/schema.prisma`, `prisma.config.ts`, and the adapter used in `src/lib/prisma.ts` and `prisma/seed.mjs`.
-
-## Project Structure
-
-- `src/app` - App Router pages and REST route handlers
-- `src/components` - UI, auth, landing, and dashboard components
-- `src/lib` - Prisma, auth, validation, permissions, and data mappers
-- `prisma` - Schema and seed script
+```text
+    [ Web Browser ]
+           │
+           │ HTTPS / JWT Cookies
+           ▼
+  ┌──────────────────────────────────────────────┐
+  │                 Next.js 16                   │
+  │                                              │
+  │  ┌─────────────────┐    ┌─────────────────┐  │
+  │  │ Client UI       │    │ Server App      │  │
+  │  │ (React, Radix,  │◄──►│ (Server Actions,│  │
+  │  │ Tailwind CSS)   │    │ Route Handlers) │  │
+  │  └─────────────────┘    └─────────────────┘  │
+  └─────────────────────────────────┬────────────┘
+                                    │
+                                    │ Prisma Client
+                                    ▼
+  ┌──────────────────────────────────────────────┐
+  │                 Prisma ORM                   │
+  │  (Data Validation, Type-safe Queries)        │
+  └─────────────────────────────────┬────────────┘
+                                    │
+                                    │ TCP / Port 5432
+                                    ▼
+  ┌──────────────────────────────────────────────┐
+  │               PostgreSQL (Railway)           │
+  │  (Relational Data, Users, Tasks, Projects)   │
+  └──────────────────────────────────────────────┘
